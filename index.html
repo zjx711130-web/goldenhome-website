@@ -15,8 +15,8 @@
             slate: '#60747b',
             mist: '#f3f5f4',
             line: '#dce3e2',
-            accent: '#c89b4b',
-            accentDark: '#9f7631'
+            accent: '#7654e8',
+            accentDark: '#5532bd'
           },
           fontFamily: {
             sans: ['Inter', 'Arial', 'sans-serif'],
@@ -38,12 +38,12 @@
     .lang-en .zh { display: none; }
     .hero-image { animation: heroIn 1.2s ease-out both; }
     @keyframes heroIn { from { transform: scale(1.04); opacity: .65; } to { transform: scale(1); opacity: 1; } }
-    .reveal-line { width: 56px; height: 2px; background: #c89b4b; }
+    .reveal-line { width: 56px; height: 2px; background: #7654e8; }
     .image-card img { transition: transform .7s cubic-bezier(.2,.7,.2,1); }
     .image-card:hover img { transform: scale(1.05); }
     .image-card .card-overlay { transition: opacity .35s ease; }
     .image-card:hover .card-overlay { opacity: .82; }
-    .focus-ring:focus-visible { outline: 3px solid rgba(200,155,75,.55); outline-offset: 4px; }
+    .focus-ring:focus-visible { outline: 3px solid rgba(118,84,232,.55); outline-offset: 4px; }
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
       *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
@@ -54,7 +54,7 @@
   <header class="fixed inset-x-0 top-0 z-50 border-b border-white/20 bg-white/95 backdrop-blur-md">
     <div class="mx-auto flex h-[76px] max-w-[1320px] items-center justify-between px-5 sm:px-8 lg:h-[84px] lg:px-12">
       <a href="#home" class="focus-ring flex items-center" aria-label="GoldenHome Living home">
-        <img src="assets/goldenhome-logo-horizontal.png" alt="GoldenHome" class="h-[32px] w-auto sm:h-[37px]" />
+        <img src="assets/goldenhome-mark.png" alt="GoldenHome" class="h-[54px] w-[54px] object-contain sm:h-[62px] sm:w-[62px]" />
       </a>
       <nav class="hidden items-center gap-8 text-[13px] font-semibold tracking-[.08em] text-ink lg:flex" aria-label="Primary navigation">
         <a class="focus-ring transition hover:text-accentDark" href="#home"><span class="en">HOME</span><span class="zh">首页</span></a>
