@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GoldenHome Living | Bespoke Home Solutions in Singapore</title>
+  <meta name="description" content="GoldenHome Living Singapore — bespoke kitchens, wardrobes and whole-home furniture for HDB, Condo and Landed homes." />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            ink: '#233238',
+            slate: '#60747b',
+            mist: '#f3f5f4',
+            line: '#dce3e2',
+            accent: '#c89b4b',
+            accentDark: '#9f7631'
+          },
+          fontFamily: {
+            sans: ['Inter', 'Arial', 'sans-serif'],
+            display: ['Manrope', 'Inter', 'Arial', 'sans-serif']
+          }
+        }
+      }
+    };
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root { color-scheme: light; }
+    html { scroll-behavior: smooth; }
+    body { font-family: Inter, Arial, sans-serif; }
+    .font-display { font-family: Manrope, Inter, Arial, sans-serif; }
+    .lang-zh .en { display: none; }
+    .lang-en .zh { display: none; }
+    .hero-image { animation: heroIn 1.2s ease-out both; }
+    @keyframes heroIn { from { transform: scale(1.04); opacity: .65; } to { transform: scale(1); opacity: 1; } }
+    .reveal-line { width: 56px; height: 2px; background: #c89b4b; }
+    .image-card img { transition: transform .7s cubic-bezier(.2,.7,.2,1); }
+    .image-card:hover img { transform: scale(1.05); }
+    .image-card .card-overlay { transition: opacity .35s ease; }
+    .image-card:hover .card-overlay { opacity: .82; }
+    .focus-ring:focus-visible { outline: 3px solid rgba(200,155,75,.55); outline-offset: 4px; }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
+    }
+  </style>
+</head>
+<body class="bg-white text-ink antialiased lang-en">
+  <header class="fixed inset-x-0 top-0 z-50 border-b border-white/20 bg-white/95 backdrop-blur-md">
+    <div class="mx-auto flex h-[76px] max-w-[1320px] items-center justify-between px-5 sm:px-8 lg:h-[84px] lg:px-12">
+      <a href="#home" class="focus-ring flex items-center" aria-label="GoldenHome Living home">
+        <img src="assets/goldenhome-logo-horizontal.png" alt="GoldenHome" class="h-[32px] w-auto sm:h-[37px]" />
+      </a>
+      <nav class="hidden items-center gap-8 text-[13px] font-semibold tracking-[.08em] text-ink lg:flex" aria-label="Primary navigation">
+        <a class="focus-ring transition hover:text-accentDark" href="#home"><span class="en">HOME</span><span class="zh">首页</span></a>
+        <a class="focus-ring transition hover:text-accentDark" href="#collections"><span class="en">COLLECTIONS</span><span class="zh">产品系列</span></a>
+        <a class="focus-ring transition hover:text-accentDark" href="#showroom"><span class="en">SHOWROOM</span><span class="zh">展厅</span></a>
+        <a class="focus-ring transition hover:text-accentDark" href="#process"><span class="en">HOW IT WORKS</span><span class="zh">服务流程</span></a>
+        <a class="focus-ring transition hover:text-accentDark" href="#contact"><span class="en">CONTACT</span><span class="zh">联系我们</span></a>
+      </nav>
+      <div class="flex items-center gap-3">
+        <button id="langToggle" class="focus-ring border border-line px-3 py-2 text-[11px] font-bold tracking-[.12em] text-slate transition hover:border-accent hover:text-accentDark" type="button"><span class="en">中文</span><span class="zh">EN</span></button>
+        <a href="#contact" class="focus-ring hidden bg-ink px-4 py-2.5 text-[11px] font-bold tracking-[.1em] text-white transition hover:bg-slate sm:inline-block"><span class="en">BOOK A VISIT</span><span class="zh">预约展厅</span></a>
+        <button id="mobileMenuBtn" class="focus-ring p-2 lg:hidden" type="button" aria-label="Open menu" aria-expanded="false">
+          <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </button>
+      </div>
+    </div>
+    <div id="mobileMenu" class="hidden border-t border-line bg-white lg:hidden">
+      <nav class="mx-auto max-w-[1320px] px-5 py-4 text-sm font-semibold tracking-[.08em]" aria-label="Mobile navigation">
+        <a class="block border-b border-line py-3" href="#home">HOME / 首页</a>
+        <a class="block border-b border-line py-3" href="#collections">COLLECTIONS / 产品系列</a>
+        <a class="block border-b border-line py-3" href="#showroom">SHOWROOM / 展厅</a>
+        <a class="block border-b border-line py-3" href="#process">HOW IT WORKS / 服务流程</a>
+        <a class="block py-3 text-accentDark" href="#contact">BOOK A VISIT / 预约展厅</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section id="home" class="relative flex min-h-[720px] items-end overflow-hidden bg-ink pt-[76px] lg:min-h-[780px] lg:pt-[84px]">
+      <img class="hero-image absolute inset-0 h-full w-full object-cover object-center" src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=2200&q=88" alt="Contemporary bespoke kitchen and living space" />
+      <div class="absolute inset-0 bg-[linear-gradient(90deg,rgba(20,31,35,.84)_0%,rgba(20,31,35,.52)_45%,rgba(20,31,35,.06)_100%)]"></div>
+      <div class="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-black/25 to-transparent"></div>
+      <div class="relative z-10 mx-auto w-full max-w-[1320px] px-5 pb-20 sm:px-8 lg:px-12 lg:pb-28">
+        <div class="max-w-2xl text-white">
+          <div class="mb-6 flex items-center gap-4 text-[11px] font-bold tracking-[.22em] text-white/80"><span class="reveal-line"></span><span class="en">SINGAPORE SHOWROOM · BESPOKE LIVING</span><span class="zh">新加坡展厅 · 定制生活</span></div>
+          <h1 class="font-display text-4xl font-semibold leading-[1.08] tracking-[-.04em] sm:text-6xl lg:text-7xl"><span class="en">A home shaped<br>around your life.</span><span class="zh">让家的每一处<br>都贴合您的生活。</span></h1>
+          <p class="mt-7 max-w-xl text-base leading-7 text-white/80 sm:text-lg"><span class="en">Thoughtful kitchens, wardrobes and living spaces, designed around the way you live in Singapore.</span><span class="zh">从厨房、衣柜到客厅系统，以新加坡家庭的生活方式为出发点，打造真正适合您的家。</span></p>
+          <div class="mt-9 flex flex-wrap gap-3">
+            <a href="#contact" class="focus-ring inline-flex items-center bg-accent px-6 py-3.5 text-xs font-bold tracking-[.12em] text-white transition hover:bg-accentDark"><span class="en">BOOK A SHOWROOM VISIT</span><span class="zh">预约展厅参观</span><span class="ml-3 text-base">↗</span></a>
+            <a href="#collections" class="focus-ring inline-flex items-center border border-white/60 bg-white/5 px-6 py-3.5 text-xs font-bold tracking-[.12em] text-white backdrop-blur-sm transition hover:bg-white hover:text-ink"><span class="en">EXPLORE COLLECTIONS</span><span class="zh">浏览产品系列</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="border-b border-line bg-mist">
+      <div class="mx-auto grid max-w-[1320px] gap-8 px-5 py-8 sm:grid-cols-3 sm:px-8 lg:px-12">
+        <div><p class="font-display text-2xl font-bold text-ink">27<span class="ml-1 text-sm font-medium text-slate">years</span></p><p class="mt-1 text-xs tracking-[.1em] text-slate">CRAFTING HOMES</p></div>
+        <div><p class="font-display text-2xl font-bold text-ink">HDB · Condo · Landed</p><p class="mt-1 text-xs tracking-[.1em] text-slate">MADE FOR SINGAPORE</p></div>
+        <div><p class="font-display text-2xl font-bold text-ink">Design to install</p><p class="mt-1 text-xs tracking-[.1em] text-slate">ONE EXPERIENCED TEAM</p></div>
+      </div>
+    </section>
+
+    <section id="collections" class="bg-white py-20 lg:py-28">
+      <div class="mx-auto max-w-[1320px] px-5 sm:px-8 lg:px-12">
+        <div class="mb-12 flex flex-col justify-between gap-5 md:flex-row md:items-end">
+          <div><p class="mb-4 text-[11px] font-bold tracking-[.22em] text-accentDark"><span class="en">WHAT WE CREATE</span><span class="zh">我们打造的空间</span></p><h2 class="font-display max-w-xl text-3xl font-semibold leading-tight tracking-[-.03em] sm:text-5xl"><span class="en">Designed for the way<br>you live.</span><span class="zh">为您的生活方式<br>量身设计。</span></h2></div>
+          <p class="max-w-md text-sm leading-6 text-slate"><span class="en">From one room to a whole home, each detail is considered for beauty, storage and everyday ease.</span><span class="zh">从单一空间到全屋定制，每一个细节都兼顾美感、收纳与日常使用。</span></p>
+        </div>
+        <div class="grid gap-5 md:grid-cols-3">
+          <article class="image-card group relative aspect-[4/5] overflow-hidden bg-ink"><img class="absolute inset-0 h-full w-full object-cover" src="https://images.unsplash.com/photo-1556911220-bff31c812dba?auto=format&fit=crop&w=1000&q=88" alt="Bespoke kitchen cabinets"><div class="card-overlay absolute inset-0 bg-gradient-to-t from-black/85 via-black/10 to-transparent"></div><div class="absolute inset-x-0 bottom-0 p-6 text-white"><p class="mb-3 text-[10px] font-bold tracking-[.2em] text-white/70">01 / KITCHEN</p><h3 class="font-display text-2xl font-semibold"><span class="en">Kitchen systems</span><span class="zh">厨柜系统</span></h3><p class="mt-2 text-sm text-white/75"><span class="en">Smart storage, refined finishes.</span><span class="zh">智能收纳，精致材质。</span></p></div></article>
+          <article class="image-card group relative aspect-[4/5] overflow-hidden bg-ink"><img class="absolute inset-0 h-full w-full object-cover" src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1000&q=88" alt="Bespoke wardrobe and dressing space"><div class="card-overlay absolute inset-0 bg-gradient-to-t from-black/85 via-black/10 to-transparent"></div><div class="absolute inset-x-0 bottom-0 p-6 text-white"><p class="mb-3 text-[10px] font-bold tracking-[.2em] text-white/70">02 / WARDROBE</p><h3 class="font-display text-2xl font-semibold"><span class="en">Wardrobes</span><span class="zh">衣柜与衣帽间</span></h3><p class="mt-2 text-sm text-white/75"><span class="en">Everyday order, beautifully made.</span><span class="zh">让收纳成为生活的一部分。</span></p></div></article>
+          <article class="image-card group relative aspect-[4/5] overflow-hidden bg-ink"><img class="absolute inset-0 h-full w-full object-cover" src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=1000&q=88" alt="Contemporary living room storage"><div class="card-overlay absolute inset-0 bg-gradient-to-t from-black/85 via-black/10 to-transparent"></div><div class="absolute inset-x-0 bottom-0 p-6 text-white"><p class="mb-3 text-[10px] font-bold tracking-[.2em] text-white/70">03 / LIVING</p><h3 class="font-display text-2xl font-semibold"><span class="en">Living spaces</span><span class="zh">客厅与全屋系统</span></h3><p class="mt-2 text-sm text-white/75"><span class="en">A calm, connected whole.</span><span class="zh">让全屋空间彼此呼应。</span></p></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="showroom" class="bg-mist py-20 lg:py-28">
+      <div class="mx-auto grid max-w-[1320px] items-center gap-12 px-5 sm:px-8 lg:grid-cols-[.9fr_1.1fr] lg:gap-20 lg:px-12">
+        <div><p class="mb-4 text-[11px] font-bold tracking-[.22em] text-accentDark"><span class="en">COME EXPERIENCE IT</span><span class="zh">欢迎亲临体验</span></p><h2 class="font-display text-3xl font-semibold leading-tight tracking-[-.03em] sm:text-5xl"><span class="en">See your possibilities<br>in person.</span><span class="zh">在展厅里<br>看见家的可能。</span></h2><p class="mt-6 text-base leading-7 text-slate"><span class="en">Visit our two-storey showroom in Ubi and explore real materials, thoughtful storage solutions and living scenarios created for Singapore homes.</span><span class="zh">欢迎来到位于 Ubi 的双层展厅，亲自体验真实材质、收纳方案和为新加坡家庭打造的生活场景。</span></p><div class="mt-8 space-y-4 border-t border-line pt-6 text-sm text-ink"><p><span class="mr-3 text-accent">＋</span><span class="en">Free space planning and quotation</span><span class="zh">免费空间规划与报价</span></p><p><span class="mr-3 text-accent">＋</span><span class="en">Professional design consultation</span><span class="zh">专业设计咨询</span></p><p><span class="mr-3 text-accent">＋</span><span class="en">Solutions for HDB, Condo and Landed homes</span><span class="zh">适用于 HDB、Condo 与 Landed 住宅</span></p></div><div class="mt-8 border-l-2 border-accent pl-5"><p class="text-xs font-bold tracking-[.12em] text-slate"><span class="en">FIND US</span><span class="zh">展厅地址</span></p><p class="mt-2 text-sm leading-6">63 Ubi Road 1, #01-50<br>Oxley Bizhub, Singapore 408728</p><p class="mt-2 text-xs text-slate"><span class="en">By appointment · Please allow one day in advance</span><span class="zh">请提前预约，建议至少提前一天</span></p></div></div>
+        <div class="overflow-hidden bg-white shadow-xl"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.7401839018003!2d103.88744291104308!3d1.3320106986497657!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da1736b5c75a67%3A0xa9f082ad8d84214!2sGOLDENHOME%20LIVING%20PTE.%20LTD!5e0!3m2!1szh-CN!2ssg!4v1787228583147!5m2!1szh-CN!2ssg" class="h-[390px] w-full border-0 sm:h-[480px]" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="GoldenHome Living showroom map"></iframe></div>
+      </div>
+    </section>
+
+    <section class="border-y border-line bg-white py-14 lg:py-20">
+      <div class="mx-auto max-w-[1320px] px-5 sm:px-8 lg:px-12"><div class="mb-8 text-center"><p class="text-[11px] font-bold tracking-[.22em] text-accentDark"><span class="en">TRUSTED CRAFTSMANSHIP</span><span class="zh">值得信赖的品质</span></p><h2 class="mt-3 font-display text-2xl font-semibold tracking-[-.02em] sm:text-3xl"><span class="en">Recognised by partners and design communities</span><span class="zh">来自合作伙伴与设计界的认可</span></h2></div><div class="overflow-hidden bg-white"><img src="assets/international-certifications.png" alt="GoldenHome international certifications and design awards" class="mx-auto h-auto w-full max-w-[1180px] object-contain" loading="lazy"></div></div>
+    </section>
+
+    <section id="process" class="bg-white py-20 lg:py-28">
+      <div class="mx-auto max-w-[1320px] px-5 sm:px-8 lg:px-12"><div class="mb-12 max-w-2xl"><p class="mb-4 text-[11px] font-bold tracking-[.22em] text-accentDark"><span class="en">THE GOLDENHOME WAY</span><span class="zh">金牌家居服务流程</span></p><h2 class="font-display text-3xl font-semibold tracking-[-.03em] sm:text-5xl"><span class="en">From first idea<br>to finished home.</span><span class="zh">从最初想法<br>到理想之家。</span></h2></div><div class="grid gap-8 border-t border-line pt-8 md:grid-cols-3 md:gap-12"><div><p class="font-display text-4xl font-bold text-accent">01</p><h3 class="mt-5 text-lg font-semibold"><span class="en">Discover</span><span class="zh">探索与预约</span></h3><p class="mt-3 text-sm leading-6 text-slate"><span class="en">Tell us about your home, your routines and what you want to improve.</span><span class="zh">告诉我们您的房屋情况、生活习惯以及希望改善的空间。</span></p></div><div><p class="font-display text-4xl font-bold text-accent">02</p><h3 class="mt-5 text-lg font-semibold"><span class="en">Design</span><span class="zh">设计与确认</span></h3><p class="mt-3 text-sm leading-6 text-slate"><span class="en">Our designers shape the layout, materials and details around your needs.</span><span class="zh">设计师根据您的需求规划布局、材质与每一个细节。</span></p></div><div><p class="font-display text-4xl font-bold text-accent">03</p><h3 class="mt-5 text-lg font-semibold"><span class="en">Make it real</span><span class="zh">制作与安装</span></h3><p class="mt-3 text-sm leading-6 text-slate"><span class="en">Precision manufacturing and professional installation bring the design home.</span><span class="zh">精工制作与专业安装，让设计真正落地。</span></p></div></div></div>
+    </section>
+
+    <section id="contact" class="bg-ink py-20 text-white lg:py-28">
+      <div class="mx-auto grid max-w-[1120px] gap-12 px-5 sm:px-8 lg:grid-cols-[.9fr_1.1fr] lg:gap-24 lg:px-12"><div><p class="mb-4 text-[11px] font-bold tracking-[.22em] text-accent"><span class="en">LET'S TALK ABOUT HOME</span><span class="zh">聊聊您理想中的家</span></p><h2 class="font-display text-3xl font-semibold leading-tight tracking-[-.03em] sm:text-5xl"><span class="en">Your home deserves<br>a considered start.</span><span class="zh">让理想之家<br>从一次沟通开始。</span></h2><p class="mt-6 max-w-md text-sm leading-6 text-white/65"><span class="en">Leave your details and our team will get back to you within 24 hours.</span><span class="zh">留下您的信息，我们会在 24 小时内与您联系。</span></p><a class="mt-8 inline-flex items-center text-sm font-semibold text-accent transition hover:text-white" href="https://wa.me/6589010758?text=Hi%20GoldenHome%2C%20I%20would%20like%20to%20book%20a%20showroom%20visit." target="_blank" rel="noopener">WhatsApp +65 8901 0758 <span class="ml-2 text-lg">↗</span></a></div><form class="space-y-5" onsubmit="event.preventDefault(); alert(document.body.classList.contains('lang-zh') ? '感谢您的预约，我们会尽快联系您。' : 'Thank you. We will be in touch soon.');"><div class="grid gap-5 sm:grid-cols-2"><label class="text-xs font-semibold tracking-[.1em] text-white/65"><span class="en">NAME</span><span class="zh">姓名</span><input required type="text" class="mt-2 w-full border-b border-white/25 bg-transparent px-0 py-3 text-sm text-white placeholder:text-white/35 focus:border-accent focus:outline-none" placeholder="Your name"></label><label class="text-xs font-semibold tracking-[.1em] text-white/65"><span class="en">MOBILE / WHATSAPP</span><span class="zh">手机 / WhatsApp</span><input required type="tel" class="mt-2 w-full border-b border-white/25 bg-transparent px-0 py-3 text-sm text-white placeholder:text-white/35 focus:border-accent focus:outline-none" placeholder="+65 9xxx xxxx"></label></div><label class="block text-xs font-semibold tracking-[.1em] text-white/65"><span class="en">I'M INTERESTED IN</span><span class="zh">我感兴趣的产品</span><select class="mt-2 w-full border-b border-white/25 bg-ink px-0 py-3 text-sm text-white focus:border-accent focus:outline-none"><option>Kitchen systems / 厨柜系统</option><option>Wardrobes / 衣柜与衣帽间</option><option>Living spaces / 客厅与全屋系统</option><option>Whole-home consultation / 全屋咨询</option></select></label><label class="block text-xs font-semibold tracking-[.1em] text-white/65"><span class="en">MESSAGE</span><span class="zh">备注</span><textarea rows="3" class="mt-2 w-full resize-none border-b border-white/25 bg-transparent px-0 py-3 text-sm text-white placeholder:text-white/35 focus:border-accent focus:outline-none" placeholder="Tell us a little about your home"></textarea></label><button class="focus-ring inline-flex items-center bg-accent px-6 py-3.5 text-xs font-bold tracking-[.12em] text-white transition hover:bg-accentDark" type="submit"><span class="en">SEND ENQUIRY</span><span class="zh">提交咨询</span><span class="ml-3 text-base">↗</span></button></form></div>
+    </section>
+  </main>
+
+  <footer class="bg-[#18262a] py-10 text-white/60"><div class="mx-auto flex max-w-[1320px] flex-col items-center justify-between gap-6 px-5 text-center sm:px-8 md:flex-row md:text-left lg:px-12"><img src="assets/goldenhome-logo-horizontal.png" alt="GoldenHome" class="h-[29px] w-auto brightness-0 invert opacity-90"><div class="text-xs leading-6"><p>63 Ubi Road 1, #01-50, Oxley Bizhub, Singapore 408728</p><p>© 2026 GoldenHome Living Pte. Ltd. All rights reserved.</p></div></div></footer>
+  <a href="https://wa.me/6589010758?text=Hi%20GoldenHome%2C%20I%20would%20like%20to%20book%20a%20showroom%20visit." target="_blank" rel="noopener" class="focus-ring fixed bottom-5 right-5 z-40 flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-xl transition hover:scale-105" aria-label="Chat with GoldenHome on WhatsApp"><svg class="h-7 w-7" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+  <script>
+    const body = document.body;
+    document.getElementById('langToggle').addEventListener('click', () => {
+      const isEnglish = body.classList.contains('lang-en');
+      body.classList.toggle('lang-en', !isEnglish);
+      body.classList.toggle('lang-zh', isEnglish);
+      document.documentElement.lang = isEnglish ? 'zh-CN' : 'en';
+    });
+    const menuButton = document.getElementById('mobileMenuBtn');
+    const menu = document.getElementById('mobileMenu');
+    menuButton.addEventListener('click', () => {
+      const open = !menu.classList.contains('hidden');
+      menu.classList.toggle('hidden', open);
+      menuButton.setAttribute('aria-expanded', String(!open));
+    });
+    menu.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => {
+      menu.classList.add('hidden');
+      menuButton.setAttribute('aria-expanded', 'false');
+    }));
+  </script>
+</body>
+</html>
