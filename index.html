@@ -44,7 +44,10 @@
     .hero-content { transition: transform 1200ms ease, opacity 1200ms ease; }
     .hero-content.align-right { transform: translateX(0); }
     @media (min-width: 1024px) {
-      .hero-content.align-right { transform: translateX(min(280px, 20vw)); }
+      .hero-content.align-right { transform: translateX(min(480px, 32vw)); }
+    }
+    @media (min-width: 1440px) {
+      .hero-content.align-right { transform: translateX(560px); }
     }
     .factory-photo { opacity: 0; transition: opacity 700ms ease; }
     .factory-photo.is-active { opacity: 1; }
