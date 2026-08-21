@@ -49,10 +49,11 @@
     @media (min-width: 1440px) {
       .hero-content.align-right { transform: translateX(560px); }
     }
-    .factory-photo { opacity: 0; transition: opacity 700ms ease; }
-    .factory-photo.is-active { opacity: 1; }
-    .factory-dot.is-active { background: #7654e8; transform: scale(1.15); }
-    .factory-control:hover { background: rgba(255,255,255,.96); color: #233238; }
+    .factory-main-image { transition: opacity 300ms ease; }
+    .factory-lines-container { transition: opacity 300ms ease; }
+    .factory-line-image { opacity: 0; transition: opacity 700ms ease; }
+    .factory-line-image.is-active { opacity: 1; }
+    .factory-view-btn:hover { background: rgba(255,255,255,0.25); }
     .hero-dot.is-active { width: 30px; background: #fff; }
     .hero-dot { transition: width .3s ease, background .3s ease; }
     @keyframes heroIn { from { transform: scale(1.04); opacity: .65; } to { transform: scale(1); opacity: 1; } }
@@ -148,26 +149,89 @@
 
     <section id="manufacturing" class="border-y border-line bg-[#eef1f5] py-20 lg:py-28">
       <div class="mx-auto max-w-[1320px] px-5 sm:px-8 lg:px-12">
-        <div class="mb-12 flex flex-col gap-5 md:flex-row md:items-end md:justify-between">
-          <div><p class="mb-4 text-[11px] font-bold tracking-[.22em] text-accentDark"><span class="en">MADE AT SCALE, WITH CARE</span><span class="zh">规模智造，品质如一</span></p><h2 class="font-display text-3xl font-semibold leading-tight tracking-[-.03em] sm:text-5xl"><span class="en">Four production bases.<br>One standard of precision.</span><span class="zh">四大生产基地。<br>一以贯之的精工标准。</span></h2></div>
-          <p class="max-w-md text-sm leading-6 text-slate"><span class="en">Across Xiamen, Chengdu, Siyang and Hong'an, GoldenHome combines intelligent manufacturing with careful quality control at every stage.</span><span class="zh">从厦门、成都、泗阳到湖北红安，金牌家居以智能制造与严谨品控，贯穿每一道生产工序。</span></p>
+        <div class="mb-12 text-center">
+          <p class="mb-4 text-[11px] font-bold tracking-[.22em] text-accentDark"><span class="en">MADE AT SCALE, WITH CARE</span><span class="zh">规模智造，品质如一</span></p>
+          <h2 class="font-display text-3xl font-semibold leading-tight tracking-[-.03em] sm:text-5xl"><span class="en">Four production bases.<br>One standard of precision.</span><span class="zh">四大生产基地。<br>一以贯之的精工标准。</span></h2>
         </div>
-        <div class="grid gap-5 lg:grid-cols-2">
-          <article class="factory-card overflow-hidden border border-line bg-white shadow-sm" data-factory-card data-factory-name="Xiamen">
-            <div class="relative aspect-[16/8] overflow-hidden bg-ink"><img class="absolute inset-0 h-full w-full object-cover" src="assets/manufacturing/xiamen-exterior.webp" alt="GoldenHome Xiamen production base exterior" loading="lazy"><div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div><p class="absolute bottom-5 left-6 text-xs font-bold tracking-[.16em] text-white">01 / XIAMEN</p></div>
-            <div class="grid gap-6 p-6 sm:grid-cols-[1fr_1.05fr] sm:p-7"><div><h3 class="font-display text-2xl font-semibold"><span class="en">Xiamen</span><span class="zh">厦门生产基地</span></h3><p class="mt-3 text-sm leading-6 text-slate"><span class="en">GoldenHome's origin and innovation hub, bringing R&amp;D, engineering and automated production together.</span><span class="zh">金牌家居的起源与创新中心，集研发、工程与自动化制造于一体。</span></p><p class="mt-4 text-[10px] font-bold tracking-[.15em] text-accentDark"><span class="en">FUJIAN, CHINA</span><span class="zh">中国 · 福建</span></p></div><div class="relative aspect-[16/10] overflow-hidden bg-mist"><img class="factory-photo is-active absolute inset-0 h-full w-full object-cover" src="assets/manufacturing/xiamen-line-01.webp" alt="Xiamen automated production line" loading="lazy" data-factory-slide><img class="factory-photo absolute inset-0 h-full w-full object-cover" src="assets/manufacturing/xiamen-line-02.webp" alt="Xiamen robotic production line" loading="lazy" data-factory-slide><img class="factory-photo absolute inset-0 h-full w-full object-cover" src="assets/manufacturing/xiamen-line-03.webp" alt="Xiamen manufacturing line" loading="lazy" data-factory-slide><div class="absolute inset-x-0 bottom-0 flex items-center justify-between p-3"><div class="flex gap-1.5"><button class="factory-dot is-active h-1.5 w-1.5 rounded-full bg-white/70" type="button" data-factory-dot="0" aria-label="Show Xiamen line 1"></button><button class="factory-dot h-1.5 w-1.5 rounded-full bg-white/70" type="button" data-factory-dot="1" aria-label="Show Xiamen line 2"></button><button class="factory-dot h-1.5 w-1.5 rounded-full bg-white/70" type="button" data-factory-dot="2" aria-label="Show Xiamen line 3"></button></div><div class="flex gap-1"><button class="factory-control flex h-8 w-8 items-center justify-center bg-white/80 text-ink transition" type="button" data-factory-prev aria-label="Previous Xiamen image">←</button><button class="factory-control flex h-8 w-8 items-center justify-center bg-white/80 text-ink transition" type="button" data-factory-next aria-label="Next Xiamen image">→</button></div></div></div></div>
+        <div class="grid gap-4 sm:grid-cols-2">
+          <!-- Xiamen Factory -->
+          <article class="factory-card group relative aspect-[4/3] cursor-pointer overflow-hidden border border-line bg-white shadow-sm transition hover:shadow-lg" data-factory-card data-factory-id="xiamen">
+            <img class="factory-main-image absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-105" src="assets/manufacturing/xiamen-exterior.webp" alt="GoldenHome Xiamen headquarters" loading="lazy">
+            <div class="factory-lines-container absolute inset-0 hidden">
+              <img class="factory-line-image is-active absolute inset-0 h-full w-full object-cover" src="assets/manufacturing/xiamen-line-01.webp" alt="Xiamen production line 1" data-factory-line>
+              <img class="factory-line-image absolute inset-0 h-full w-full object-cover" src="assets/manufacturing/xiamen-line-02.webp" alt="Xiamen production line 2" data-factory-line>
+              <img class="factory-line-image absolute inset-0 h-full w-full object-cover" src="assets/manufacturing/xiamen-line-03.webp" alt="Xiamen production line 3" data-factory-line>
+            </div>
+            <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent"></div>
+            <div class="absolute inset-x-0 bottom-0 p-6 text-white">
+              <p class="mb-2 text-[10px] font-bold tracking-[.18em] text-white/80">01 / XIAMEN</p>
+              <h3 class="font-display text-xl font-semibold sm:text-2xl"><span class="en">Xiamen</span><span class="zh">厦门生产基地</span></h3>
+              <p class="mt-2 text-xs leading-5 text-white/75 sm:text-sm"><span class="en">Innovation hub, R&D and automated production.</span><span class="zh">创新中心，集研发与自动化制造于一体</span></p>
+              <button class="factory-view-btn mt-4 inline-flex items-center gap-2 border border-white/40 bg-white/10 px-4 py-2 text-xs font-semibold backdrop-blur-sm transition hover:bg-white/20" type="button">
+                <span class="en">View Production Lines</span><span class="zh">查看生产线</span>
+                <span class="text-sm">→</span>
+              </button>
+            </div>
           </article>
-          <article class="factory-card overflow-hidden border border-line bg-white shadow-sm" data-factory-card data-factory-name="Chengdu">
-            <div class="relative aspect-[16/8] overflow-hidden bg-ink"><img class="absolute inset-0 h-full w-full object-cover" src="assets/manufacturing/chengdu-exterior.webp" alt="GoldenHome Chengdu production base aerial view" loading="lazy"><div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div><p class="absolute bottom-5 left-6 text-xs font-bold tracking-[.16em] text-white">02 / CHENGDU</p></div>
-            <div class="grid gap-6 p-6 sm:grid-cols-[1fr_1.05fr] sm:p-7"><div><h3 class="font-display text-2xl font-semibold"><span class="en">Chengdu</span><span class="zh">成都生产基地</span></h3><p class="mt-3 text-sm leading-6 text-slate"><span class="en">A key western manufacturing base supporting efficient, large-scale delivery with modern production systems.</span><span class="zh">服务西部市场的重要制造基地，以现代化生产体系支持高效、规模化交付。</span></p><p class="mt-4 text-[10px] font-bold tracking-[.15em] text-accentDark"><span class="en">SICHUAN, CHINA</span><span class="zh">中国 · 四川</span></p></div><div class="relative aspect-[16/10] overflow-hidden bg-mist"><img class="factory-photo is-active absolute inset-0 h-full w-full object-cover" src="assets/manufacturing/chengdu-line-01.webp" alt="Chengdu production line" loading="lazy" data-factory-slide><img class="factory-photo absolute inset-0 h-full w-full object-cover" src="assets/manufacturing/chengdu-line-02.webp" alt="Chengdu manufacturing equipment" loading="lazy" data-factory-slide><img class="factory-photo absolute inset-0 h-full w-full object-cover" src="assets/manufacturing/chengdu-line-03.webp" alt="Chengdu automated production line" loading="lazy" data-factory-slide><div class="absolute inset-x-0 bottom-0 flex items-center justify-between p-3"><div class="flex gap-1.5"><button class="factory-dot is-active h-1.5 w-1.5 rounded-full bg-white/70" type="button" data-factory-dot="0" aria-label="Show Chengdu line 1"></button><button class="factory-dot h-1.5 w-1.5 rounded-full bg-white/70" type="button" data-factory-dot="1" aria-label="Show Chengdu line 2"></button><button class="factory-dot h-1.5 w-1.5 rounded-full bg-white/70" type="button" data-factory-dot="2" aria-label="Show Chengdu line 3"></button></div><div class="flex gap-1"><button class="factory-control flex h-8 w-8 items-center justify-center bg-white/80 text-ink transition" type="button" data-factory-prev aria-label="Previous Chengdu image">←</button><button class="factory-control flex h-8 w-8 items-center justify-center bg-white/80 text-ink transition" type="button" data-factory-next aria-label="Next Chengdu image">→</button></div></div></div></div>
+
+          <!-- Malaysia Factory -->
+          <article class="factory-card group relative aspect-[4/3] cursor-pointer overflow-hidden border border-line bg-white shadow-sm transition hover:shadow-lg" data-factory-card data-factory-id="malaysia">
+            <img class="factory-main-image absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-105" src="assets/manufacturing/malaysia-exterior.webp" alt="GoldenHome Malaysia Kuala Lumpur factory" loading="lazy">
+            <div class="factory-lines-container absolute inset-0 hidden">
+              <img class="factory-line-image is-active absolute inset-0 h-full w-full object-cover" src="assets/manufacturing/xiamen-line-01.webp" alt="Malaysia production line 1" data-factory-line>
+              <img class="factory-line-image absolute inset-0 h-full w-full object-cover" src="assets/manufacturing/xiamen-line-02.webp" alt="Malaysia production line 2" data-factory-line>
+              <img class="factory-line-image absolute inset-0 h-full w-full object-cover" src="assets/manufacturing/xiamen-line-03.webp" alt="Malaysia production line 3" data-factory-line>
+            </div>
+            <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent"></div>
+            <div class="absolute inset-x-0 bottom-0 p-6 text-white">
+              <p class="mb-2 text-[10px] font-bold tracking-[.18em] text-white/80">02 / MALAYSIA</p>
+              <h3 class="font-display text-xl font-semibold sm:text-2xl"><span class="en">Kuala Lumpur</span><span class="zh">马来吉隆坡工厂</span></h3>
+              <p class="mt-2 text-xs leading-5 text-white/75 sm:text-sm"><span class="en">Serves Malaysia & Singapore, 30-day delivery.</span><span class="zh">专注服务马来及新加坡市场，30天快速交付</span></p>
+              <button class="factory-view-btn mt-4 inline-flex items-center gap-2 border border-white/40 bg-white/10 px-4 py-2 text-xs font-semibold backdrop-blur-sm transition hover:bg-white/20" type="button">
+                <span class="en">View Production Lines</span><span class="zh">查看生产线</span>
+                <span class="text-sm">→</span>
+              </button>
+            </div>
           </article>
-          <article class="factory-card overflow-hidden border border-line bg-white shadow-sm" data-factory-card data-factory-name="Siyang">
-            <div class="relative aspect-[16/8] overflow-hidden bg-ink"><img class="absolute inset-0 h-full w-full object-cover" src="assets/manufacturing/siyang-exterior.webp" alt="GoldenHome Siyang production base aerial view" loading="lazy"><div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div><p class="absolute bottom-5 left-6 text-xs font-bold tracking-[.16em] text-white">03 / SIYANG</p></div>
-            <div class="grid gap-6 p-6 sm:grid-cols-[1fr_1.05fr] sm:p-7"><div><h3 class="font-display text-2xl font-semibold"><span class="en">Siyang</span><span class="zh">泗阳生产基地</span></h3><p class="mt-3 text-sm leading-6 text-slate"><span class="en">A high-capacity industrial base where digitally connected lines support consistent craftsmanship at scale.</span><span class="zh">高产能工业制造基地，以数字化协同产线支撑规模化生产中的稳定品质。</span></p><p class="mt-4 text-[10px] font-bold tracking-[.15em] text-accentDark"><span class="en">JIANGSU, CHINA</span><span class="zh">中国 · 江苏</span></p></div><div class="relative aspect-[16/10] overflow-hidden bg-mist"><img class="factory-photo is-active absolute inset-0 h-full w-full object-cover" src="assets/manufacturing/siyang-line-01.webp" alt="Siyang production line" loading="lazy" data-factory-slide><img class="factory-photo absolute inset-0 h-full w-full object-cover" src="assets/manufacturing/siyang-line-02.webp" alt="Siyang production equipment" loading="lazy" data-factory-slide><img class="factory-photo absolute inset-0 h-full w-full object-cover" src="assets/manufacturing/siyang-line-03.webp" alt="Siyang automated production line" loading="lazy" data-factory-slide><div class="absolute inset-x-0 bottom-0 flex items-center justify-between p-3"><div class="flex gap-1.5"><button class="factory-dot is-active h-1.5 w-1.5 rounded-full bg-white/70" type="button" data-factory-dot="0" aria-label="Show Siyang line 1"></button><button class="factory-dot h-1.5 w-1.5 rounded-full bg-white/70" type="button" data-factory-dot="1" aria-label="Show Siyang line 2"></button><button class="factory-dot h-1.5 w-1.5 rounded-full bg-white/70" type="button" data-factory-dot="2" aria-label="Show Siyang line 3"></button></div><div class="flex gap-1"><button class="factory-control flex h-8 w-8 items-center justify-center bg-white/80 text-ink transition" type="button" data-factory-prev aria-label="Previous Siyang image">←</button><button class="factory-control flex h-8 w-8 items-center justify-center bg-white/80 text-ink transition" type="button" data-factory-next aria-label="Next Siyang image">→</button></div></div></div></div>
+
+          <!-- Chengdu Factory -->
+          <article class="factory-card group relative aspect-[4/3] cursor-pointer overflow-hidden border border-line bg-white shadow-sm transition hover:shadow-lg" data-factory-card data-factory-id="chengdu">
+            <img class="factory-main-image absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-105" src="assets/manufacturing/chengdu-exterior.webp" alt="GoldenHome Chengdu production base" loading="lazy">
+            <div class="factory-lines-container absolute inset-0 hidden">
+              <img class="factory-line-image is-active absolute inset-0 h-full w-full object-cover" src="assets/manufacturing/chengdu-line-01.webp" alt="Chengdu production line 1" data-factory-line>
+              <img class="factory-line-image absolute inset-0 h-full w-full object-cover" src="assets/manufacturing/chengdu-line-02.webp" alt="Chengdu production line 2" data-factory-line>
+              <img class="factory-line-image absolute inset-0 h-full w-full object-cover" src="assets/manufacturing/chengdu-line-03.webp" alt="Chengdu production line 3" data-factory-line>
+            </div>
+            <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent"></div>
+            <div class="absolute inset-x-0 bottom-0 p-6 text-white">
+              <p class="mb-2 text-[10px] font-bold tracking-[.18em] text-white/80">03 / CHENGDU</p>
+              <h3 class="font-display text-xl font-semibold sm:text-2xl"><span class="en">Chengdu</span><span class="zh">成都生产基地</span></h3>
+              <p class="mt-2 text-xs leading-5 text-white/75 sm:text-sm"><span class="en">Western China hub for efficient large-scale delivery.</span><span class="zh">西部制造基地，高效规模化交付</span></p>
+              <button class="factory-view-btn mt-4 inline-flex items-center gap-2 border border-white/40 bg-white/10 px-4 py-2 text-xs font-semibold backdrop-blur-sm transition hover:bg-white/20" type="button">
+                <span class="en">View Production Lines</span><span class="zh">查看生产线</span>
+                <span class="text-sm">→</span>
+              </button>
+            </div>
           </article>
-          <article class="factory-card overflow-hidden border border-line bg-white shadow-sm" data-factory-card data-factory-name="Hong'an">
-            <div class="relative aspect-[16/8] overflow-hidden bg-ink"><img class="absolute inset-0 h-full w-full object-cover" src="assets/manufacturing/hongan-exterior.webp" alt="GoldenHome Hong'an production base exterior" loading="lazy"><div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div><p class="absolute bottom-5 left-6 text-xs font-bold tracking-[.16em] text-white">04 / HONG'AN</p></div>
-            <div class="grid gap-6 p-6 sm:grid-cols-[1fr_1.05fr] sm:p-7"><div><h3 class="font-display text-2xl font-semibold"><span class="en">Hong'an</span><span class="zh">湖北红安生产基地</span></h3><p class="mt-3 text-sm leading-6 text-slate"><span class="en">An expanding manufacturing base serving long-term growth, supported by GoldenHome's shared production expertise.</span><span class="zh">面向长期发展的制造基地，依托金牌家居共享的制造经验与品质标准持续建设。</span></p><p class="mt-4 text-[10px] font-bold tracking-[.15em] text-accentDark"><span class="en">HUBEI, CHINA</span><span class="zh">中国 · 湖北</span></p></div><div class="relative aspect-[16/10] overflow-hidden bg-mist"><img class="factory-photo is-active absolute inset-0 h-full w-full object-cover" src="assets/manufacturing/hongan-line-01.webp" alt="Automated production line supporting Hong'an base" loading="lazy" data-factory-slide><img class="factory-photo absolute inset-0 h-full w-full object-cover" src="assets/manufacturing/hongan-line-02.webp" alt="Manufacturing line supporting Hong'an base" loading="lazy" data-factory-slide><img class="factory-photo absolute inset-0 h-full w-full object-cover" src="assets/manufacturing/hongan-line-03.webp" alt="Production equipment supporting Hong'an base" loading="lazy" data-factory-slide><div class="absolute inset-x-0 bottom-0 flex items-center justify-between p-3"><div class="flex gap-1.5"><button class="factory-dot is-active h-1.5 w-1.5 rounded-full bg-white/70" type="button" data-factory-dot="0" aria-label="Show Hong'an line 1"></button><button class="factory-dot h-1.5 w-1.5 rounded-full bg-white/70" type="button" data-factory-dot="1" aria-label="Show Hong'an line 2"></button><button class="factory-dot h-1.5 w-1.5 rounded-full bg-white/70" type="button" data-factory-dot="2" aria-label="Show Hong'an line 3"></button></div><div class="flex gap-1"><button class="factory-control flex h-8 w-8 items-center justify-center bg-white/80 text-ink transition" type="button" data-factory-prev aria-label="Previous Hong'an image">←</button><button class="factory-control flex h-8 w-8 items-center justify-center bg-white/80 text-ink transition" type="button" data-factory-next aria-label="Next Hong'an image">→</button></div></div></div></div>
+
+          <!-- Siyang Factory -->
+          <article class="factory-card group relative aspect-[4/3] cursor-pointer overflow-hidden border border-line bg-white shadow-sm transition hover:shadow-lg" data-factory-card data-factory-id="siyang">
+            <img class="factory-main-image absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-105" src="assets/manufacturing/siyang-exterior.webp" alt="GoldenHome Siyang production base" loading="lazy">
+            <div class="factory-lines-container absolute inset-0 hidden">
+              <img class="factory-line-image is-active absolute inset-0 h-full w-full object-cover" src="assets/manufacturing/siyang-line-01.webp" alt="Siyang production line 1" data-factory-line>
+              <img class="factory-line-image absolute inset-0 h-full w-full object-cover" src="assets/manufacturing/siyang-line-02.webp" alt="Siyang production line 2" data-factory-line>
+              <img class="factory-line-image absolute inset-0 h-full w-full object-cover" src="assets/manufacturing/siyang-line-03.webp" alt="Siyang production line 3" data-factory-line>
+            </div>
+            <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent"></div>
+            <div class="absolute inset-x-0 bottom-0 p-6 text-white">
+              <p class="mb-2 text-[10px] font-bold tracking-[.18em] text-white/80">04 / SIYANG</p>
+              <h3 class="font-display text-xl font-semibold sm:text-2xl"><span class="en">Siyang</span><span class="zh">泗阳生产基地</span></h3>
+              <p class="mt-2 text-xs leading-5 text-white/75 sm:text-sm"><span class="en">High-capacity base with digitally connected lines.</span><span class="zh">高产能基地，数字化协同产线</span></p>
+              <button class="factory-view-btn mt-4 inline-flex items-center gap-2 border border-white/40 bg-white/10 px-4 py-2 text-xs font-semibold backdrop-blur-sm transition hover:bg-white/20" type="button">
+                <span class="en">View Production Lines</span><span class="zh">查看生产线</span>
+                <span class="text-sm">→</span>
+              </button>
+            </div>
           </article>
         </div>
       </div>
@@ -255,22 +319,68 @@
     heroDots.forEach((dot, index) => dot.addEventListener('click', () => showHero(index)));
     if (heroSlides.length > 1) window.setInterval(() => showHero(heroIndex + 1), 10000);
 
+    // Factory production lines viewer
     document.querySelectorAll('[data-factory-card]').forEach((card) => {
-      const slides = [...card.querySelectorAll('[data-factory-slide]')];
-      const dots = [...card.querySelectorAll('[data-factory-dot]')];
-      let current = 0;
-      const showFactorySlide = (index) => {
-        current = (index + slides.length) % slides.length;
-        slides.forEach((slide, i) => slide.classList.toggle('is-active', i === current));
-        dots.forEach((dot, i) => {
-          dot.classList.toggle('is-active', i === current);
-          dot.setAttribute('aria-current', i === current ? 'true' : 'false');
-        });
+      const mainImage = card.querySelector('.factory-main-image');
+      const linesContainer = card.querySelector('.factory-lines-container');
+      const lineImages = [...card.querySelectorAll('[data-factory-line]')];
+      const viewBtn = card.querySelector('.factory-view-btn');
+
+      let isPlaying = false;
+      let currentLine = 0;
+      let cycleCount = 0;
+      let intervalId = null;
+
+      const showLine = (index) => {
+        currentLine = index % lineImages.length;
+        lineImages.forEach((img, i) => img.classList.toggle('is-active', i === currentLine));
       };
-      card.querySelector('[data-factory-prev]').addEventListener('click', () => showFactorySlide(current - 1));
-      card.querySelector('[data-factory-next]').addEventListener('click', () => showFactorySlide(current + 1));
-      dots.forEach((dot, index) => dot.addEventListener('click', () => showFactorySlide(index)));
-      if (slides.length > 1) window.setInterval(() => showFactorySlide(current + 1), 6000);
+
+      const startPlayback = () => {
+        if (isPlaying) return;
+        isPlaying = true;
+        cycleCount = 0;
+        currentLine = 0;
+
+        // Hide main image, show lines container
+        mainImage.style.opacity = '0';
+        setTimeout(() => {
+          mainImage.classList.add('hidden');
+          linesContainer.classList.remove('hidden');
+          showLine(0);
+        }, 300);
+
+        // Auto-advance every 3 seconds
+        intervalId = setInterval(() => {
+          currentLine++;
+          if (currentLine >= lineImages.length) {
+            currentLine = 0;
+            cycleCount++;
+
+            // After 2 complete cycles, return to main image
+            if (cycleCount >= 2) {
+              clearInterval(intervalId);
+              linesContainer.style.opacity = '0';
+              setTimeout(() => {
+                linesContainer.classList.add('hidden');
+                mainImage.classList.remove('hidden');
+                mainImage.style.opacity = '1';
+                linesContainer.style.opacity = '1';
+                isPlaying = false;
+                currentLine = 0;
+                cycleCount = 0;
+              }, 300);
+              return;
+            }
+          }
+          showLine(currentLine);
+        }, 3000);
+      };
+
+      viewBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        startPlayback();
+      });
     });
   </script>
 </body>
