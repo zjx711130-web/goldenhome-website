@@ -1,0 +1,32 @@
+# macOS system files
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Original source images (compressed WebP versions are in assets/)
+海外产品形象*.png
+海外产品形象*.jpg
+国内公司及工厂图片/
+
+# Large original photos
+*.JPG
+YANG*.JPG
+IMG_*.jpg
+
+# Editor files
+.vscode/
+*.swp
+*.swo
+*~
+
+# Dependencies
+node_modules/
+.npm
+
+# Build outputs
+dist/
+build/
+
+# Logs
+*.log
+npm-debug.log*
